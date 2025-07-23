@@ -103,4 +103,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(total, records);
     }
 
+    //启用禁用员工状态
+    @Override
+    public void setStatus(Integer status, long id) {
+
+        Employee employee= Employee.builder().status(status).id(id).createTime(LocalDateTime.now()).build();
+
+
+        employeeMapper.update(employee);
+    }
+
 }
