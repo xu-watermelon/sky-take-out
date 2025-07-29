@@ -10,6 +10,7 @@ import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
 
+import com.sky.entity.SetmealDish;
 import com.sky.enumeration.OperationType;
 import com.sky.exception.DeletionNotAllowedException;
 import com.sky.mapper.DishFlavorMapper;
@@ -95,7 +96,7 @@ public class DishServiceImpl implements DishService {
 
         //判断菜品是否关联套餐
         for (Long id : ids) {
-            List<Long> list = setmealDishMapper.getById(id);
+            List<SetmealDish> list = setmealDishMapper.getById(id);
             if(list!=null&& !list.isEmpty()){
                 throw new DeletionNotAllowedException(MessageConstant.DISH_BE_RELATED_BY_SETMEAL);
             }
@@ -166,5 +167,15 @@ public class DishServiceImpl implements DishService {
         dish.setId(id);
 
        dishMapper.update(dish);
+    }
+
+    //根据分类id 查询菜品
+    @Override
+    public List<Dish> getBySort(long categoryId) {
+
+
+       List<Dish>list= dishMapper.getBySort(categoryId);
+       return list;
+
     }
 }

@@ -89,4 +89,12 @@ public class DishController {
         return  Result.success();
     }
 
+
+    //根据分类查询菜品
+    @ApiOperation("根据分类查询菜品")
+    @GetMapping("/list")
+    public Result<List<Dish>> getBySort(long categoryId){
+       List<Dish> list=dishService.getBySort(categoryId);
+       return Result.success(list);
+    }
 }
