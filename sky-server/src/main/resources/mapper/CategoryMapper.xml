@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.CategoryMapper">
     <select id="page" resultType="category">
-        select * from category
+        select * from sky_take_out.category
         <where>
             <if test="name!=null and name!=''">
                 name=#{name}
@@ -15,7 +15,7 @@
     </select>
 
     <update id="update">
-        update category
+        update sky_take_out.category
         <set>
             <if test="type!=null">type=#{type},</if>
             <if test="name!=null">name=#{name},</if>

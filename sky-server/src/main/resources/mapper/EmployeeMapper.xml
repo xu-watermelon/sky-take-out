@@ -5,7 +5,7 @@
     <!--    员工分页查询-->
     <select id="pageQuery" resultType="com.sky.entity.Employee">
         select *
-        from employee
+        from sky_take_out.employee
         <where>
             <if test="name !=null and name!=''">
                 and name like concat('%',#{name},'%')
@@ -14,7 +14,7 @@
     </select>
 
     <update id="update" parameterType="Employee">
-update employee
+update sky_take_out.employee
 <set>
     <if test="name!=null "> name=#{name}, </if>
     <if test="username!=null "> username=#{username} ,</if>
