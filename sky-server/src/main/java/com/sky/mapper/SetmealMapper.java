@@ -23,7 +23,7 @@ public interface SetmealMapper {
     List<SetmealVO> page(SetmealPageQueryDTO setmealPageQueryDTO);
 
     @Select("select * from sky_take_out.setmeal where id=#{id}")
-    SetmealDTO getById(long id);
+    SetmealVO getById(long id);
 
     @AutoFill(OperationType.UPDATE)
     void update(Setmeal setmeal);

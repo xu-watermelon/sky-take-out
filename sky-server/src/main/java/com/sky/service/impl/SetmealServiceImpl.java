@@ -2,7 +2,6 @@ package com.sky.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.sky.dto.DishDTO;
 import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
@@ -63,13 +62,13 @@ public class SetmealServiceImpl implements SetmealService {
 
     //根据id查询套餐
     @Override
-    public SetmealDTO getById(long id) {
+    public SetmealVO getById(long id) {
 
-       SetmealDTO setmealDTO= setmealMapper.getById(id);
+       SetmealVO setmealVO= setmealMapper.getById(id);
 
         List<SetmealDish> list = setmealDishMapper.getById(id);
-        setmealDTO.setSetmealDishes(list);
-        return setmealDTO;
+        setmealVO.setSetmealDishes(list);
+        return setmealVO;
     }
 
     //修改套餐
