@@ -23,4 +23,12 @@ public interface DishService {
     void setStatus(Integer status, long id);
 
     List<Dish> getBySort(long categoryId);
+
+
+    /**
+     * 条件查询菜品和口味
+     * @param dish
+     * @return
+     */
+    List<DishVO> listWithFlavor(Dish dish);
 }

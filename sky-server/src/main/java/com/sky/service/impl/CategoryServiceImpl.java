@@ -76,7 +76,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> getByType(long type) {
+    public List<Category> getByType(Integer type) {
 
        return categoryMapper.getByType(type);
 

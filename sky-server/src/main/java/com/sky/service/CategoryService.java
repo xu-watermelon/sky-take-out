@@ -19,5 +19,5 @@ public interface CategoryService {
 
     void update(CategoryDTO categoryDTO);
 
-    List<Category> getByType(long type);
+    List<Category> getByType(Integer type);
 }

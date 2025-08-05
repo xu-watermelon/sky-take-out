@@ -30,6 +30,6 @@ public interface CategoryMapper {
     //修改分类
     @AutoFill(value = OperationType.UPDATE)
     void update(Category category);
-    @Select("select * from sky_take_out.category where type=#{type}")
-    List<Category> getByType(long type);
+
+    List<Category> getByType(Integer type);
 }

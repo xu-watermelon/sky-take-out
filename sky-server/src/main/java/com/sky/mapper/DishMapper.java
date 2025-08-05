@@ -29,4 +29,6 @@ public interface DishMapper {
 
     @Select("select * from sky_take_out.dish where category_id=#{categoryId}")
     List<Dish> getBySort(long categoryId);
+
+    List<Dish> list(Dish dish);
 }

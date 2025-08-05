@@ -76,7 +76,7 @@ public class CategoryController {
     //根据类型查询分类
     @ApiOperation("根据类型查询分类")
     @GetMapping("/list")
-    public Result<List> getByType(long type){
+    public Result<List> getByType(Integer type){
         log.info("根据类型查询分类:{}",type);
        List<Category> list = categoryService.getByType(type);
 

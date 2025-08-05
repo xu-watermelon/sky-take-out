@@ -28,4 +28,11 @@
         </set>
         where id=#{id}
     </update>
+
+    <select id="getByType" resultType="Category">
+        select * from sky_take_out.category
+        <where>
+            <if test="type!=null">type=#{type}</if>
+        </where>
+    </select>
 </mapper>
