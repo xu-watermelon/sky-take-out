@@ -7,5 +7,12 @@
        insert into sky_take_out.user( openid, create_time)
        values (#{openid},#{createTime})
    </insert>
+    <select id="countByMap" resultType="java.lang.Integer">
+        select count(id) from sky_take_out.user
+        <where>
+            <if test="begin!=null">create_time>#{begin}</if>
+            <if test="end!=null"> and create_time<![CDATA[ < ]]>  #{end}</if>
+        </where>
+    </select>
 
 </mapper>

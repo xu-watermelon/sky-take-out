@@ -21,7 +21,7 @@ public class OrderTask {
 
     @Scheduled(cron="0 * * * * ?")
     public void processTimeoutOrder(){
-        log.info("订单超时,自动取消:{}", LocalDateTime.now());
+         log.info("订单超时,自动取消:{}", LocalDateTime.now());
         //查询超时订单
        List<Orders> list= orderMapper.getByStatusAndOrderTimeLT(Orders.PENDING_PAYMENT,LocalDateTime.now().plusMinutes(-15));
        if(list!=null&&list.size()>0){
